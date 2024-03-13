@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48cbc7b1-eb4b-43f8-9fe5-26421ee0e9c6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Diary.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/Diary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/model/Entry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repository/DiaryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repository/EntryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/DiaryRepositoryTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="48cbc7b1-eb4b-43f8-9fe5-26421ee0e9c6" name="Changes" comment="Diary app with repository" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +36,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.DiaryRepositoryTest.executor": "Run",
+    "JUnit.DiaryRepositoryTest.testSaveDiary_countIsOne.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "true",
     "Repository.Attach.Sources": "true",
@@ -107,12 +94,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710357064703</updated>
-      <workItem from="1710357065802" duration="2191000" />
+      <workItem from="1710357065802" duration="3896000" />
     </task>
+    <task id="LOCAL-00001" summary="Diary app with repository">
+      <option name="closed" value="true" />
+      <created>1710360971714</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710360971714</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Diary app with repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Diary app with repository" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
