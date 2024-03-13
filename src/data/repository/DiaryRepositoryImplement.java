@@ -8,7 +8,7 @@ public class DiaryRepositoryImplement implements DiaryRepository{
     private int count;
     @Override
     public Diary save(Diary diary) {
-        count++;`
+        count++;
         return null;
     }
 
