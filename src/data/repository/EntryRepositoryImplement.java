@@ -21,6 +21,11 @@ public class EntryRepositoryImplement implements EntryRepository{
     }
 
     @Override
+    public Entry findByAuthor(String author) {
+        return null;
+    }
+
+    @Override
     public long count() {
         return 0;
     }

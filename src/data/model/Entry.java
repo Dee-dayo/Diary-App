@@ -7,4 +7,5 @@ public class Entry {
     private String title;
     private String body;
     private LocalDateTime dateCreated = LocalDateTime.now();
+    private String author;
 }
