@@ -1,4 +1,4 @@
-package data.exceptions;
+package exceptions;
 
 public class UsernameAlreadyExistException extends RuntimeException{
     public UsernameAlreadyExistException(String message) {

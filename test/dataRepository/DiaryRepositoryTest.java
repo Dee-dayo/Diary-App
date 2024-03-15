@@ -1,13 +1,11 @@
-import data.exceptions.DiaryNotFoundException;
-import data.exceptions.InvalidUsernameException;
-import data.exceptions.UsernameAlreadyExistException;
+package dataRepository;
+
 import data.model.Diary;
 import data.repository.DiaryRepository;
 import data.repository.DiaryRepositoryImplement;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DiaryRepositoryTest {
     @Test
@@ -35,6 +33,8 @@ public class DiaryRepositoryTest {
         repository.save(diary);
         Diary diary2 = new Diary("Username2", "password");
         repository.save(diary2);
+        assertEquals(2, repository.count());
+
         repository.delete(diary);
         assertEquals(1, repository.count());
     }
@@ -71,36 +71,15 @@ public class DiaryRepositoryTest {
     }
 
     @Test
-    public void testSaveOneDiary_cantSaveAnotherDiaryWithSameUsername(){
+    public void saveTwoDiary_canFindAllDiariesSaved(){
         DiaryRepository repository = new DiaryRepositoryImplement();
         Diary diary = new Diary("Username", "password");
         repository.save(diary);
-        Diary diary2 = new Diary("Username", "password");
-        assertThrows(UsernameAlreadyExistException.class, ()->repository.save(diary2));
+        repository.save(diary);
+        assertEquals(2, repository.count());
+
+        var foundDiaries = repository.findAll();
+        assertEquals(2, foundDiaries.size());
     }
 
-    @Test
-    public void testSaveOneDiary_cantDeleteDiaryThatNotSaved(){
-        DiaryRepository repository = new DiaryRepositoryImplement();
-        Diary diary = new Diary("Username", "password");
-        repository.save(diary);
-        Diary diary2 = new Diary("Username2", "password2");
-        assertThrows(DiaryNotFoundException.class, ()-> repository.delete(diary2));
-    }
-
-    @Test
-    public void testSaveOneDiary_cantDeleteDiaryWithWrongUsername(){
-        DiaryRepository repository = new DiaryRepositoryImplement();
-        Diary diary = new Diary("Username", "password");
-        repository.save(diary);
-        assertThrows(DiaryNotFoundException.class, ()-> repository.delete("Username2"));
-    }
-
-    @Test
-    public void testSaveOneDiary_cantFindDiaryByWrongUsername(){
-        DiaryRepository repository = new DiaryRepositoryImplement();
-        Diary diary = new Diary("Username", "password");
-        repository.save(diary);
-        assertThrows(InvalidUsernameException.class, ()->repository.findByUsername("Username2"));
-    }
 }

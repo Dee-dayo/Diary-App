@@ -1,4 +1,4 @@
-package data.exceptions;
+package exceptions;
 
 public class InvalidUsernameException extends RuntimeException{
     public InvalidUsernameException(String message){
