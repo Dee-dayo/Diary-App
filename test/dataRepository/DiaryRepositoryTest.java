@@ -5,9 +5,10 @@ import data.repository.DiaryRepository;
 import data.repository.DiaryRepositoryImplement;
 import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DiaryRepositoryTest {
+
     @Test
     public void testSaveDiary_countIsOne(){
         DiaryRepository repository = new DiaryRepositoryImplement();
@@ -82,4 +83,34 @@ public class DiaryRepositoryTest {
         assertEquals(2, foundDiaries.size());
     }
 
+    @Test
+    public void diaryIsUnlockedDefault(){
+        DiaryRepository repository = new DiaryRepositoryImplement();
+        Diary diary = new Diary("Username", "password");
+        Diary savedDiary = repository.save(diary);
+        assertFalse(savedDiary.isLocked());
+    }
+
+    @Test
+    public void diaryisUnlocked_diaryCanBeLocked(){
+        DiaryRepository repository = new DiaryRepositoryImplement();
+        Diary diary = new Diary("Username", "password");
+        Diary saved = repository.save(diary);
+        repository.lock(diary);
+        assertTrue(saved.isLocked());
+    }
+
+//    @Test
+//    public void diaryisLocked_canUnlockWithPassword(){
+//        DiaryRepository repository = new DiaryRepositoryImplement();
+//        Diary diary = new Diary("Username", "password");
+//        repository.save(diary);
+//        repository.unlockDiary("");
+//        Diary foundDiary = repository.findByUsername("Username");
+//        foundDiary.lock();
+//        assertTrue(foundDiary.isLocked());
+//
+//        foundDiary.unlock("password");
+//        assertFalse(foundDiary.isLocked());
+//    }
 }

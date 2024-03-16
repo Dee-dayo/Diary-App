@@ -57,4 +57,19 @@ public class DiaryRepositoryImplement implements DiaryRepository{
 //        }
         diaries.remove(diary);
     }
+
+    public void lock(Diary diary) {
+        Diary findDiary = findByUsername(diary.getUsername());
+        if (findDiary != null) {
+            findDiary.lock();
+        }
+    }
+
+//    @Override
+//    public void unlockDiary(Diary diary, String password) {
+//        Diary findDiary = findByUsername(diary.getUsername());
+//        if (findDiary != null && findDiary.getPassword().equals(password)) {
+//            findDiary.unlock();
+//        }
+//    }
 }

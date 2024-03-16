@@ -14,6 +14,18 @@ public class Diary {
         this.username = username;
     }
 
+    public boolean isLocked() {
+        return isLocked;
+    }
+
+    public void lock() {
+        isLocked = true;
+    }
+
+    public void unlock(){
+        isLocked = false;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -30,4 +42,5 @@ public class Diary {
     public String getUsername() {
         return username;
     }
+
 }
