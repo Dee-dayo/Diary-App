@@ -1,6 +1,5 @@
 package data.repository;
 
-import data.model.Diary;
 import data.model.Entry;
 
 import java.util.ArrayList;
@@ -57,8 +56,14 @@ public class EntryRepositoryImplement implements EntryRepository{
     }
 
     @Override
-    public Entry findByAuthor(String author) {
-        return null;
+    public List<Entry> findByAuthor(String author) {
+        List<Entry> found = new ArrayList<>();
+        for (Entry entry: entries){
+            if (entry.getAuthor().equals(author)){
+                found.add(entry);
+            }
+        }
+        return found;
     }
 
     @Override

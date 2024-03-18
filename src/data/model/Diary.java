@@ -10,20 +10,12 @@ public class Diary {
     private List<Entry> entries = new ArrayList<Entry>();
     public Diary(){}
 
+    public String getUsername() {
+        return username;
+    }
+
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public boolean isLocked() {
-        return isLocked;
-    }
-
-    public void lock() {
-        isLocked = true;
-    }
-
-    public void unlock(){
-        isLocked = false;
     }
 
     public String getPassword() {
@@ -34,13 +26,11 @@ public class Diary {
         this.password = password;
     }
 
-    public Diary(String username, String password) {
-        this.username = username;
-        this.password = password;
+    public boolean isLocked() {
+        return isLocked;
     }
 
-    public String getUsername() {
-        return username;
+    public void setLocked(boolean locked) {
+        isLocked = locked;
     }
-
 }

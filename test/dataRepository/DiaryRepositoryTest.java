@@ -12,7 +12,9 @@ public class DiaryRepositoryTest {
     @Test
     public void testSaveDiary_countIsOne(){
         DiaryRepository repository = new DiaryRepositoryImplement();
-        Diary diary = new Diary("Username", "password");
+        Diary diary = new Diary();
+        diary.setUsername("Username");
+        diary.setPassword("Password");
         repository.save(diary);
         assertEquals(1, repository.count());
     }
@@ -20,19 +22,27 @@ public class DiaryRepositoryTest {
     @Test
     public void testSaveTwoDiary_countIsTwo(){
         DiaryRepository repository = new DiaryRepositoryImplement();
-        Diary diary = new Diary("Username", "password");
+        Diary diary = new Diary();
+        diary.setUsername("Username");
+        diary.setPassword("Password");
         repository.save(diary);
-        Diary diary2 = new Diary("Username2", "password");
+        Diary diary2 = new Diary();
+        diary2.setUsername("Username2");
+        diary2.setPassword("Password2");
         repository.save(diary2);
         assertEquals(2, repository.count());
     }
 
     @Test
     public void testSaveTwoDiary_deleteOne_countIsOne(){
-        DiaryRepository repository = new DiaryRepositoryImplement();
-        Diary diary = new Diary("Username", "password");
+       DiaryRepository repository = new DiaryRepositoryImplement();
+        Diary diary = new Diary();
+        diary.setUsername("Username");
+        diary.setPassword("Password");
         repository.save(diary);
-        Diary diary2 = new Diary("Username2", "password");
+        Diary diary2 = new Diary();
+        diary2.setUsername("Username2");
+        diary2.setPassword("Password2");
         repository.save(diary2);
         assertEquals(2, repository.count());
 
@@ -43,9 +53,13 @@ public class DiaryRepositoryTest {
      @Test
     public void testSaveTwoDiary_deleteOneWithUsername_countIsOne(){
         DiaryRepository repository = new DiaryRepositoryImplement();
-        Diary diary = new Diary("Username", "password");
+        Diary diary = new Diary();
+        diary.setUsername("Username");
+        diary.setPassword("Password");
         repository.save(diary);
-        Diary diary2 = new Diary("Username2", "password2");
+        Diary diary2 = new Diary();
+        diary2.setUsername("Username2");
+        diary2.setPassword("Password2");
         repository.save(diary2);
         repository.delete("Username");
         assertEquals(1, repository.count());
@@ -53,10 +67,14 @@ public class DiaryRepositoryTest {
 
     @Test
     public void testSaveTwoDiary_deleteTwo_countIsZero(){
-        DiaryRepository repository = new DiaryRepositoryImplement();
-        Diary diary = new Diary("Username", "password");
-        Diary diary2 = new Diary("Username2", "password");
+       DiaryRepository repository = new DiaryRepositoryImplement();
+        Diary diary = new Diary();
+        diary.setUsername("Username");
+        diary.setPassword("Password");
         repository.save(diary);
+        Diary diary2 = new Diary();
+        diary2.setUsername("Username2");
+        diary2.setPassword("Password2");
         repository.save(diary2);
         repository.delete(diary);
         repository.delete(diary2);
@@ -66,7 +84,9 @@ public class DiaryRepositoryTest {
     @Test
     public void testSaveOneDiary_canFindDiaryByUsername(){
         DiaryRepository repository = new DiaryRepositoryImplement();
-        Diary diary = new Diary("Username", "password");
+        Diary diary = new Diary();
+        diary.setUsername("Username");
+        diary.setPassword("Password");
         repository.save(diary);
         assertEquals(diary, repository.findByUsername("Username"));
     }
@@ -74,7 +94,9 @@ public class DiaryRepositoryTest {
     @Test
     public void saveTwoDiary_canFindAllDiariesSaved(){
         DiaryRepository repository = new DiaryRepositoryImplement();
-        Diary diary = new Diary("Username", "password");
+        Diary diary = new Diary();
+        diary.setUsername("Username");
+        diary.setPassword("Password");
         repository.save(diary);
         repository.save(diary);
         assertEquals(2, repository.count());
@@ -86,31 +108,11 @@ public class DiaryRepositoryTest {
     @Test
     public void diaryIsUnlockedDefault(){
         DiaryRepository repository = new DiaryRepositoryImplement();
-        Diary diary = new Diary("Username", "password");
+        Diary diary = new Diary();
+        diary.setUsername("Username");
+        diary.setPassword("Password");
         Diary savedDiary = repository.save(diary);
         assertFalse(savedDiary.isLocked());
     }
 
-    @Test
-    public void diaryisUnlocked_diaryCanBeLocked(){
-        DiaryRepository repository = new DiaryRepositoryImplement();
-        Diary diary = new Diary("Username", "password");
-        Diary saved = repository.save(diary);
-        repository.lock(diary);
-        assertTrue(saved.isLocked());
-    }
-
-//    @Test
-//    public void diaryisLocked_canUnlockWithPassword(){
-//        DiaryRepository repository = new DiaryRepositoryImplement();
-//        Diary diary = new Diary("Username", "password");
-//        repository.save(diary);
-//        repository.unlockDiary("");
-//        Diary foundDiary = repository.findByUsername("Username");
-//        foundDiary.lock();
-//        assertTrue(foundDiary.isLocked());
-//
-//        foundDiary.unlock("password");
-//        assertFalse(foundDiary.isLocked());
-//    }
 }

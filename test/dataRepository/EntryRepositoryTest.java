@@ -11,7 +11,9 @@ public class EntryRepositoryTest {
     @Test
     public void testCreateEntry_countIsOne(){
         EntryRepository repository = new EntryRepositoryImplement();
-        Entry entry = new Entry(1, "Title", "Body");
+        Entry entry = new Entry();
+        entry.setTitle("Title");
+        entry.setBody("Body");
         repository.save(entry);
         assertEquals(1, repository.count());
     }
@@ -19,18 +21,28 @@ public class EntryRepositoryTest {
     @Test
     public void testCreateTwoEntry_countIsTwo(){
         EntryRepository repository = new EntryRepositoryImplement();
-        Entry entry = new Entry(1, "Title", "Body");
+        Entry entry = new Entry();
+        entry.setTitle("Title");
+        entry.setBody("Body");
         repository.save(entry);
-        repository.save(new Entry(2, "Title2", "Body2"));
+        Entry entry2 = new Entry();
+        entry2.setTitle("Title");
+        entry2.setBody("Body");
+        repository.save(entry2);
         assertEquals(2, repository.count());
     }
 
     @Test
     public void testCreateTwoEntry_deleteOne_countIsOne(){
         EntryRepository repository = new EntryRepositoryImplement();
-        Entry entry = new Entry(1, "Title", "Body");
+        Entry entry = new Entry();
+        entry.setTitle("Title");
+        entry.setBody("Body");
         repository.save(entry);
-        repository.save(new Entry(2, "Title2", "Body2"));
+        Entry entry2 = new Entry();
+        entry2.setTitle("Title");
+        entry2.setBody("Body");
+        repository.save(entry2);
         repository.delete(entry);
         assertEquals(1, repository.count());
     }
@@ -38,9 +50,14 @@ public class EntryRepositoryTest {
      @Test
     public void testCreateTwoEntry_deleteOneWithId_countIsOne(){
         EntryRepository repository = new EntryRepositoryImplement();
-        Entry entry = new Entry(1, "Title", "Body");
+        Entry entry = new Entry();
+        entry.setTitle("Title");
+        entry.setBody("Body");
         repository.save(entry);
-        repository.save(new Entry(2, "Title2", "Body2"));
+        Entry entry2 = new Entry();
+        entry2.setTitle("Title");
+        entry2.setBody("Body");
+        repository.save(entry2);
         assertEquals(2, repository.count());
         repository.delete(2);
         assertEquals(1, repository.count());
@@ -49,9 +66,13 @@ public class EntryRepositoryTest {
     @Test
     public void testCreateTwoEntry_deleteTwo_countIsZero(){
         EntryRepository repository = new EntryRepositoryImplement();
-        Entry entry = new Entry(1, "Title", "Body");
-        Entry entry2 = new Entry(2, "Title2", "Body2");
+        Entry entry = new Entry();
+        entry.setTitle("Title");
+        entry.setBody("Body");
         repository.save(entry);
+        Entry entry2 = new Entry();
+        entry2.setTitle("Title");
+        entry2.setBody("Body");
         repository.save(entry2);
         repository.delete(entry);
         repository.delete(2);
@@ -60,8 +81,10 @@ public class EntryRepositoryTest {
 
     @Test
     public void testSaveOneDiary_canFindDiaryByUsername(){
-         EntryRepository repository = new EntryRepositoryImplement();
-        Entry entry = new Entry(1, "Title", "Body");
+        EntryRepository repository = new EntryRepositoryImplement();
+        Entry entry = new Entry();
+        entry.setTitle("Title");
+        entry.setBody("Body");
         repository.save(entry);
         assertEquals(entry, repository.findById(1));
     }
@@ -69,9 +92,13 @@ public class EntryRepositoryTest {
     @Test
     public void createTwoEntry_canFindAllEntriesSaved(){
         EntryRepository repository = new EntryRepositoryImplement();
-        Entry entry = new Entry(1, "Title", "Body");
-        Entry entry2 = new Entry(2, "Title2", "Body2");
+        Entry entry = new Entry();
+        entry.setTitle("Title");
+        entry.setBody("Body");
         repository.save(entry);
+        Entry entry2 = new Entry();
+        entry2.setTitle("Title");
+        entry2.setBody("Body");
         repository.save(entry2);
         assertEquals(2, repository.count());
 
@@ -82,7 +109,9 @@ public class EntryRepositoryTest {
     @Test
     public void saveOneEntry_returnEntryWithIdNo(){
         EntryRepository repository = new EntryRepositoryImplement();
-        Entry entry = new Entry(1, "Title", "Body");
+        Entry entry = new Entry();
+        entry.setTitle("Title");
+        entry.setBody("Body");
         Entry newEntry = repository.save(entry);
         assertEquals(1, newEntry.getId());
     }

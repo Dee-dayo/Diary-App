@@ -1,23 +1,9 @@
-package data.model;
+package dtos.requests;
 
-import java.time.LocalDateTime;
-
-public class Entry {
+public class EntryRequest {
     private String title;
     private String body;
-    private LocalDateTime dateCreated = LocalDateTime.now();
     private String author;
-    private int id;
-
-    public Entry(){}
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -33,14 +19,6 @@ public class Entry {
 
     public void setBody(String body) {
         this.body = body;
-    }
-
-    public LocalDateTime getDateCreated() {
-        return dateCreated;
-    }
-
-    public void setDateCreated(LocalDateTime dateCreated) {
-        this.dateCreated = dateCreated;
     }
 
     public String getAuthor() {

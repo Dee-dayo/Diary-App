@@ -1,13 +1,19 @@
 package services;
 
 import data.model.Diary;
+import data.model.Entry;
 import data.repository.DiaryRepository;
 import data.repository.DiaryRepositoryImplement;
+import dtos.requests.EntryRequest;
+import dtos.requests.LoginRequest;
+import dtos.requests.LogoutRequest;
 import dtos.requests.RegisterRequest;
 import exceptions.UsernameAlreadyExistException;
 
-public class DiaryServiceImplement implements DiaryService{
+public class DiaryServiceImplement implements DiaryServices {
     private DiaryRepository diaryRepository = new DiaryRepositoryImplement();
+    private EntryServices entryServices = new EntryServiceImplement();
+
     @Override
     public void register(RegisterRequest registerRequest) {
         validateUsername(registerRequest);
@@ -18,18 +24,6 @@ public class DiaryServiceImplement implements DiaryService{
         diaryRepository.save(diary);
     }
 
-    @Override
-    public Diary login(RegisterRequest registerRequest) {
-        String username = registerRequest.getUsername();
-        String password = registerRequest.getPassword();
-        Diary diary = diaryRepository.findByUsername(username);
-
-        if (diary != null && diary.getPassword().equals(password)) {
-            return diary;
-        }
-        return null;
-    }
-
     private void validateUsername(RegisterRequest registerRequest) {
         Diary diary = diaryRepository.findByUsername(registerRequest.getUsername());
         if(diary != null)throw new UsernameAlreadyExistException("Username already exist");
@@ -38,4 +32,37 @@ public class DiaryServiceImplement implements DiaryService{
     public long getNoOfCustomers(){
         return diaryRepository.count();
     }
+
+    @Override
+    public void login(LoginRequest loginRequest) {
+        String username = loginRequest.getUsername();
+        String password = loginRequest.getPassword();
+        Diary diary = diaryRepository.findByUsername(username);
+        if (diary.getPassword().equals(password)) {
+            diary.setLocked(false);
+        }
+        diaryRepository.save(diary);
+    }
+
+    @Override
+    public Diary findDiaryByUsername(String username) {
+        return diaryRepository.findByUsername(username);
+    }
+
+    @Override
+    public void logout(LogoutRequest logoutRequest) {
+        String username = logoutRequest.getUsername();
+        Diary diary = diaryRepository.findByUsername(username);
+        diary.setLocked(true);
+        diaryRepository.save(diary);
+    }
+
+    @Override
+    public void createEntry(EntryRequest entryRequest) {
+        Entry entry = new Entry();
+        entry.setBody(entryRequest.getBody());
+        entry.setTitle(entryRequest.getTitle());
+        entryServices.addEntry(entry);
+    }
+
 }

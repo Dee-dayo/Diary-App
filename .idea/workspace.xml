@@ -5,16 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48cbc7b1-eb4b-43f8-9fe5-26421ee0e9c6" name="Changes" comment="added diary services">
+      <change afterPath="$PROJECT_DIR$/src/dtos/requests/EntryRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dtos/requests/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dtos/requests/LogoutRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/DiaryServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/EntryServiceImplement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/EntryServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/services/DiaryServicesImplementTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/model/Diary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Diary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Entry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/repository/DiaryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/DiaryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dtos/requests/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dtos/requests/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/InvalidUsernameException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/DiaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repository/EntryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/EntryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/DiaryService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/DiaryServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryServiceImplement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/dataRepository/DiaryRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataRepository/DiaryRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/services/DiaryServiceImplementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/services/DiaryServiceImplementTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/dataRepository/EntryRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataRepository/EntryRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/services/DiaryServiceImplementTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,9 +104,13 @@
     "JUnit.DiaryServiceImplementTest.registerOneUser_userCanLoginWithValidCredentials.executor": "Run",
     "JUnit.DiaryServiceImplementTest.registerOneUser_userCantLoginWithIncorrectCaseSensitivePassword.executor": "Run",
     "JUnit.DiaryServiceImplementTest.registerOneUser_userCantLoginWithWrongPassword.executor": "Run",
+    "JUnit.DiaryServiceImplementTest.registerOneUser_userDiaryIsUnlocked.executor": "Run",
+    "JUnit.DiaryServiceImplementTest.registerOneUser_userLoginIn_userCanLogout.executor": "Run",
     "JUnit.DiaryServiceImplementTest.userCantLoginIfNotRegistered_throwDiaryNotFoundException.executor": "Run",
     "JUnit.DiaryServiceTest.executor": "Run",
     "JUnit.DiaryServiceTest.testUserRegister_countIsOne.executor": "Run",
+    "JUnit.DiaryServicesImplementTest.executor": "Run",
+    "JUnit.DiaryServicesImplementTest.registerOneUser_userCanCreateEntry.executor": "Run",
     "JUnit.EntryRepositoryTest.createTwoEntry_canFindAllEntriesSaved.executor": "Run",
     "JUnit.EntryRepositoryTest.executor": "Run",
     "JUnit.EntryRepositoryTest.saveOneEntry_returnEntryWithIdNo.executor": "Run",
@@ -130,8 +143,8 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DiaryServiceImplementTest.userCantLoginIfNotRegistered_throwDiaryNotFoundException">
-    <configuration name="DiaryServiceImplementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DiaryServicesImplementTest">
+    <configuration name="DiaryServicesImplementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diary" />
       <extension name="coverage">
         <pattern>
@@ -140,13 +153,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.DiaryServiceImplementTest" />
+      <option name="MAIN_CLASS_NAME" value="services.DiaryServicesImplementTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServiceImplementTest.registerOneUser_UserCanLoginWithAnyCaseSensitivity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServicesImplementTest.registerOneUser_userCanCreateEntry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diary" />
       <extension name="coverage">
         <pattern>
@@ -155,14 +168,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.DiaryServiceImplementTest" />
-      <option name="METHOD_NAME" value="registerOneUser_UserCanLoginWithAnyCaseSensitivity" />
+      <option name="MAIN_CLASS_NAME" value="services.DiaryServicesImplementTest" />
+      <option name="METHOD_NAME" value="registerOneUser_userCanCreateEntry" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServiceImplementTest.registerOneUser_userCantLoginWithIncorrectCaseSensitivePassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServicesImplementTest.registerOneUser_userDiaryIsUnlocked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diary" />
       <extension name="coverage">
         <pattern>
@@ -171,14 +184,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.DiaryServiceImplementTest" />
-      <option name="METHOD_NAME" value="registerOneUser_userCantLoginWithIncorrectCaseSensitivePassword" />
+      <option name="MAIN_CLASS_NAME" value="services.DiaryServicesImplementTest" />
+      <option name="METHOD_NAME" value="registerOneUser_userDiaryIsUnlocked" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServiceImplementTest.registerOneUser_userCantLoginWithWrongPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServicesImplementTest.registerOneUser_userLoginIn_userCanLogout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diary" />
       <extension name="coverage">
         <pattern>
@@ -187,36 +200,35 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.DiaryServiceImplementTest" />
-      <option name="METHOD_NAME" value="registerOneUser_userCantLoginWithWrongPassword" />
+      <option name="MAIN_CLASS_NAME" value="services.DiaryServicesImplementTest" />
+      <option name="METHOD_NAME" value="registerOneUser_userLoginIn_userCanLogout" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServiceImplementTest.userCantLoginIfNotRegistered_throwDiaryNotFoundException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EntryRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diary" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="services.*" />
+          <option name="PATTERN" value="dataRepository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.DiaryServiceImplementTest" />
-      <option name="METHOD_NAME" value="userCantLoginIfNotRegistered_throwDiaryNotFoundException" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="dataRepository" />
+      <option name="MAIN_CLASS_NAME" value="dataRepository.EntryRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DiaryServiceImplementTest.userCantLoginIfNotRegistered_throwDiaryNotFoundException" />
-        <item itemvalue="JUnit.DiaryServiceImplementTest" />
-        <item itemvalue="JUnit.DiaryServiceImplementTest.registerOneUser_userCantLoginWithIncorrectCaseSensitivePassword" />
-        <item itemvalue="JUnit.DiaryServiceImplementTest.registerOneUser_userCantLoginWithWrongPassword" />
-        <item itemvalue="JUnit.DiaryServiceImplementTest.registerOneUser_UserCanLoginWithAnyCaseSensitivity" />
+        <item itemvalue="JUnit.DiaryServicesImplementTest" />
+        <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_userCanCreateEntry" />
+        <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_userLoginIn_userCanLogout" />
+        <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_userDiaryIsUnlocked" />
+        <item itemvalue="JUnit.EntryRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +248,8 @@
       <workItem from="1710425691838" duration="1209000" />
       <workItem from="1710444876051" duration="13906000" />
       <workItem from="1710561339686" duration="356000" />
-      <workItem from="1710561924853" duration="5482000" />
+      <workItem from="1710561924853" duration="8483000" />
+      <workItem from="1710762820642" duration="8264000" />
     </task>
     <task id="LOCAL-00001" summary="Diary app with repository">
       <option name="closed" value="true" />
@@ -278,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710504331125</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added diary services">
+      <option name="closed" value="true" />
+      <created>1710567964607</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710567964607</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
