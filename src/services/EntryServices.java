@@ -2,7 +2,6 @@ package services;
 
 import data.model.Entry;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface EntryServices {

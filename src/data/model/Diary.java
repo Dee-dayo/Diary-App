@@ -32,4 +32,5 @@ public class Diary {
     public void setLocked(boolean locked) {
         isLocked = locked;
     }
+
 }

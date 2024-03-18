@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="48cbc7b1-eb4b-43f8-9fe5-26421ee0e9c6" name="Changes" comment="added entry services">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/DiaryServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryServiceImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/Diary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Diary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/EntryServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/EntryServiceImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/EntryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/EntryServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/services/DiaryServicesImplementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/services/DiaryServicesImplementTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -210,8 +214,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DiaryServicesImplementTest" />
-        <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_diaryCantUnlockWithWrongUsername" />
         <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_userCanCreateEntry" />
+        <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_diaryCantUnlockWithWrongUsername" />
         <item itemvalue="JUnit.DiaryRepositoryTest" />
         <item itemvalue="JUnit.EntryRepositoryTest" />
       </list>
@@ -234,7 +238,7 @@
       <workItem from="1710444876051" duration="13906000" />
       <workItem from="1710561339686" duration="356000" />
       <workItem from="1710561924853" duration="8483000" />
-      <workItem from="1710762820642" duration="12923000" />
+      <workItem from="1710762820642" duration="15284000" />
     </task>
     <task id="LOCAL-00001" summary="Diary app with repository">
       <option name="closed" value="true" />
@@ -300,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710792717143</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added entry services">
+      <option name="closed" value="true" />
+      <created>1710797863177</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710797863177</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

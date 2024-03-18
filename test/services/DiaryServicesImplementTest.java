@@ -73,6 +73,7 @@ public class DiaryServicesImplementTest {
         registerRequest.setUsername("Username");
         registerRequest.setPassword("password");
         diaryServices.register(registerRequest);
+        assertEquals(1, diaryServices.getNoOfCustomers());
 
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setUsername("Username");
@@ -85,6 +86,6 @@ public class DiaryServicesImplementTest {
         entryRequest.setAuthor("Username");
         diaryServices.createEntry(entryRequest);
 
-        assertEquals(1, entryServices.findEntriesByUsername("Username").size());
+        assertEquals(1, entryServices.findEntriesByUsername("USERname").size());
     }
 }

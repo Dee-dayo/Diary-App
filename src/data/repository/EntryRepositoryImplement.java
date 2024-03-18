@@ -24,6 +24,7 @@ public class EntryRepositoryImplement implements EntryRepository{
             if (findEntry.getId() == entry.getId()){
                 entries.remove(findEntry);
                 entries.add(entry);
+                return;
             }
         }
     }
@@ -59,7 +60,7 @@ public class EntryRepositoryImplement implements EntryRepository{
     public List<Entry> findByAuthor(String author) {
         List<Entry> found = new ArrayList<>();
         for (Entry entry: entries){
-            if (entry.getAuthor().equals(author)){
+            if (entry.getAuthor().equalsIgnoreCase(author)){
                 found.add(entry);
             }
         }

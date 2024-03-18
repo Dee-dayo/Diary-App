@@ -25,7 +25,6 @@ public class DiaryRepositoryImplement implements DiaryRepository{
             if (diary.getUsername().equals(username)) {
                 return diary;
             }
-            break;
         }
         return null;
     }
