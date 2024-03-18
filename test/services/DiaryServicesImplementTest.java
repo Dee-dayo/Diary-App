@@ -46,6 +46,7 @@ public class DiaryServicesImplementTest {
         assertFalse(diaryServices.findDiaryByUsername("username").isLocked());
     }
 
+
     @Test
     public void registerOneUser_userLoginIn_userCanLogout(){
         RegisterRequest registerRequest = new RegisterRequest();

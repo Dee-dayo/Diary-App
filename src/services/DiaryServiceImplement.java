@@ -8,6 +8,7 @@ import dtos.requests.EntryRequest;
 import dtos.requests.LoginRequest;
 import dtos.requests.LogoutRequest;
 import dtos.requests.RegisterRequest;
+import exceptions.DiaryNotFoundException;
 import exceptions.UsernameAlreadyExistException;
 
 public class DiaryServiceImplement implements DiaryServices {
@@ -46,7 +47,11 @@ public class DiaryServiceImplement implements DiaryServices {
 
     @Override
     public Diary findDiaryByUsername(String username) {
-        return diaryRepository.findByUsername(username);
+        Diary diary = diaryRepository.findByUsername(username);
+        if (diary == null) {
+            throw new DiaryNotFoundException("User not found");
+        }
+        return diary;
     }
 
     @Override
