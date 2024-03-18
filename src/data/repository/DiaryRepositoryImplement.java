@@ -7,12 +7,10 @@ import java.util.List;
 
 public class DiaryRepositoryImplement implements DiaryRepository{
     private List<Diary> diaries = new ArrayList<>();
-    private int count;
 
     @Override
     public Diary save(Diary diary) {
         diaries.add(diary);
-        count++;
         return diary;
     }
 
@@ -42,7 +40,6 @@ public class DiaryRepositoryImplement implements DiaryRepository{
         Diary diary = findByUsername(username);
         if (diary != null) {
             diaries.remove(diary);
-            count--;
         }
     }
 

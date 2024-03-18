@@ -26,6 +26,6 @@ public class EntryRequest {
     }
 
     public void setAuthor(String author) {
-        this.author = author;
+        this.author = author.toLowerCase();
     }
 }

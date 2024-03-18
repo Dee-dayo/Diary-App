@@ -7,7 +7,6 @@ public class Diary {
     private String username;
     private String password;
     private boolean isLocked = false;
-    private List<Entry> entries = new ArrayList<Entry>();
     public Diary(){}
 
     public String getUsername() {

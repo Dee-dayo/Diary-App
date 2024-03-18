@@ -81,9 +81,9 @@ public class DiaryServicesImplementTest {
         EntryRequest entryRequest = new EntryRequest();
         entryRequest.setTitle("Title");
         entryRequest.setBody("Body");
-        entryRequest.setAuthor(registerRequest.getUsername());
+        entryRequest.setAuthor("Username");
         diaryServices.createEntry(entryRequest);
 
-        assertEquals(1, entryServices.findEntriesByUsername("username").size());
+        assertEquals(1, entryServices.findEntriesByUsername("Username").size());
     }
 }

@@ -62,6 +62,7 @@ public class DiaryServiceImplement implements DiaryServices {
         Entry entry = new Entry();
         entry.setBody(entryRequest.getBody());
         entry.setTitle(entryRequest.getTitle());
+        entry.setAuthor(entryRequest.getAuthor());
         entryServices.addEntry(entry);
     }
 

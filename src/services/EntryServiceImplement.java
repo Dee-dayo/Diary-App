@@ -8,9 +8,10 @@ import java.util.List;
 
 public class EntryServiceImplement implements EntryServices{
     private static EntryRepository entryRepository = new EntryRepositoryImplement();
+
     @Override
     public void addEntry(Entry entry) {
-
+        entryRepository.save(entry);
     }
 
     @Override
