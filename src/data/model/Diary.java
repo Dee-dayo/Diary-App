@@ -7,7 +7,16 @@ public class Diary {
     private String username;
     private String password;
     private boolean isLocked = false;
+    private int id;
     public Diary(){}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;

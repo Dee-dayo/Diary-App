@@ -4,14 +4,35 @@ import data.model.Diary;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class DiaryRepositoryImplement implements DiaryRepository{
-    private List<Diary> diaries = new ArrayList<>();
+    private final List<Diary> diaries = new ArrayList<>();
+    private int countDiary;
 
     @Override
     public Diary save(Diary diary) {
+        if (isNew(diary)) addIdTo(diary);
+        else update(diary);
+        
         diaries.add(diary);
         return diary;
+    }
+
+    private boolean isNew(Diary diary) {
+        return diary.getId() == 0;
+    }
+
+    private void addIdTo(Diary diary) {
+        diary.setId(generateId());
+    }
+
+    private int generateId() {
+        return ++countDiary;
+    }
+
+    private void update(Diary diary) {
+        diaries.removeIf(d -> Objects.equals(d.getUsername(), diary.getUsername()));
     }
 
     @Override

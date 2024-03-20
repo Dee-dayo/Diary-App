@@ -50,4 +50,5 @@ public class Entry {
     public void setAuthor(String author) {
         this.author = author;
     }
+
 }

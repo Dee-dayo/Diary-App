@@ -4,16 +4,16 @@ import data.model.Diary;
 import data.model.Entry;
 import data.repository.DiaryRepository;
 import data.repository.DiaryRepositoryImplement;
-import dtos.requests.EntryRequest;
-import dtos.requests.LoginRequest;
-import dtos.requests.LogoutRequest;
-import dtos.requests.RegisterRequest;
+import dtos.requests.*;
+import exceptions.DiaryLockedException;
 import exceptions.DiaryNotFoundException;
 import exceptions.UsernameAlreadyExistException;
 
+import java.util.List;
+
 public class DiaryServiceImplement implements DiaryServices {
-    private DiaryRepository diaryRepository = new DiaryRepositoryImplement();
-    private EntryServices entryServices = new EntryServiceImplement();
+    private final DiaryRepository diaryRepository = new DiaryRepositoryImplement();
+    private final EntryServices entryServices = new EntryServiceImplement();
 
     @Override
     public void register(RegisterRequest registerRequest) {
@@ -64,11 +64,54 @@ public class DiaryServiceImplement implements DiaryServices {
 
     @Override
     public void createEntry(EntryRequest entryRequest) {
+        Diary diary = findDiaryByUsername(entryRequest.getAuthor());
+        isLockStatus(diary);
+
         Entry entry = new Entry();
         entry.setBody(entryRequest.getBody());
         entry.setTitle(entryRequest.getTitle());
         entry.setAuthor(entryRequest.getAuthor());
         entryServices.addEntry(entry);
     }
+
+    private void isLockStatus(Diary diary) {
+        if(diary.isLocked()) throw new DiaryLockedException("You need to login to create Entry");
+    }
+
+    @Override
+    public void deleteDiary(DeleteUserRequest deleteUserRequest) {
+        String username = deleteUserRequest.getUsername();
+        String password = deleteUserRequest.getPassword();
+        Diary diary = diaryRepository.findByUsername(username);
+        isLockStatus(diary);
+
+        if (diary.getPassword().equals(password)) diaryRepository.delete(diary);
+    }
+
+    @Override
+    public List<Entry> getEntries(String username) {
+        return entryServices.findEntriesByUsername(username);
+    }
+
+    @Override
+    public void updateEntry(EntryRequest entryRequest) {
+        Diary diary = findDiaryByUsername(entryRequest.getAuthor());
+        isLockStatus(diary);
+
+        Entry entry = new Entry();
+        entry.setBody(entryRequest.getBody());
+        entry.setTitle(entryRequest.getTitle());
+        entry.setAuthor(entryRequest.getAuthor());
+        entryServices.addEntry(entry);
+    }
+
+    @Override
+    public void deleteEntry(DeleteEntryRequest deleteEntryRequest) {
+        Diary diary = findDiaryByUsername(deleteEntryRequest.getUsername());
+        isLockStatus(diary);
+
+        entryServices.deleteEntrybyId(deleteEntryRequest.getEntryId());
+    }
+
 
 }

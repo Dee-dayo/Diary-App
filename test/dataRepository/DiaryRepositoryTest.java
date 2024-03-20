@@ -98,7 +98,10 @@ public class DiaryRepositoryTest {
         diary.setUsername("Username");
         diary.setPassword("Password");
         repository.save(diary);
-        repository.save(diary);
+        Diary diary2 = new Diary();
+        diary2.setUsername("Username");
+        diary2.setPassword("Password");
+        repository.save(diary2);
         assertEquals(2, repository.count());
 
         var foundDiaries = repository.findAll();

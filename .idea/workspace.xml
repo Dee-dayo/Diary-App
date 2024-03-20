@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48cbc7b1-eb4b-43f8-9fe5-26421ee0e9c6" name="Changes" comment="added entry services">
+      <change afterPath="$PROJECT_DIR$/src/dtos/requests/DeleteEntryRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dtos/requests/DeleteUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/DiaryLockedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/EntryNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/model/Diary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Diary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Entry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/DiaryServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryServiceImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/DiaryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/EntryServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/EntryServiceImplement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/EntryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/EntryServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/services/DiaryServicesImplementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/services/DiaryServicesImplementTest.java" afterDir="false" />
@@ -64,76 +71,80 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.DiaryRepositoryTest.diaryIsUnlockedDefault.executor": "Run",
-    "JUnit.DiaryRepositoryTest.diaryisLocked_canUnlockWithPassword.executor": "Run",
-    "JUnit.DiaryRepositoryTest.diaryisUnlocked_diaryCanBeLocked.executor": "Run",
-    "JUnit.DiaryRepositoryTest.executor": "Run",
-    "JUnit.DiaryRepositoryTest.saveTwoDiary_canFindAllDiariesSaved.executor": "Run",
-    "JUnit.DiaryRepositoryTest.testSaveDiary_countIsOne.executor": "Run",
-    "JUnit.DiaryRepositoryTest.testSaveOneDiary_canFindDiaryByUsername.executor": "Run",
-    "JUnit.DiaryRepositoryTest.testSaveOneDiary_cantDeleteDiaryThatNotSaved.executor": "Run",
-    "JUnit.DiaryRepositoryTest.testSaveOneDiary_cantDeleteDiaryWithWrongUsername.executor": "Run",
-    "JUnit.DiaryRepositoryTest.testSaveOneDiary_cantFindDiaryByWrongUsername.executor": "Run",
-    "JUnit.DiaryRepositoryTest.testSaveOneDiary_cantSaveAnotherDiaryWithSameUsername.executor": "Run",
-    "JUnit.DiaryRepositoryTest.testSaveTwoDiary_countIsTwo.executor": "Run",
-    "JUnit.DiaryRepositoryTest.testSaveTwoDiary_deleteOneWithUsername_countIsOne.executor": "Run",
-    "JUnit.DiaryRepositoryTest.testSaveTwoDiary_deleteOne_countIsOne.executor": "Run",
-    "JUnit.DiaryRepositoryTest.testSaveTwoDiary_deleteTwo_countIsZero.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.registerOneUser_UserCanLoginWithAnyCase.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.registerOneUser_UserCanLoginWithAnyCaseSensitive.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.registerOneUser_UserCanLoginWithAnyCaseSensitivity.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.registerOneUser_UserTriesToRegisterAgain_ThrowsException.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.registerOneUser_countIsOne.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.registerOneUser_userCanLogin.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.registerOneUser_userCanLoginWithValidCredentials.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.registerOneUser_userCantLoginWithIncorrectCaseSensitivePassword.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.registerOneUser_userCantLoginWithWrongPassword.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.registerOneUser_userDiaryIsUnlocked.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.registerOneUser_userLoginIn_userCanLogout.executor": "Run",
-    "JUnit.DiaryServiceImplementTest.userCantLoginIfNotRegistered_throwDiaryNotFoundException.executor": "Run",
-    "JUnit.DiaryServiceTest.executor": "Run",
-    "JUnit.DiaryServiceTest.testUserRegister_countIsOne.executor": "Run",
-    "JUnit.DiaryServicesImplementTest.executor": "Run",
-    "JUnit.DiaryServicesImplementTest.registerOneUser_diaryCantUnlockWithWrongUsername.executor": "Run",
-    "JUnit.DiaryServicesImplementTest.registerOneUser_userCanCreateEntry.executor": "Run",
-    "JUnit.DiaryServicesImplementTest.registerOneUser_userLoginIn_userCanLogout.executor": "Run",
-    "JUnit.EntryRepositoryTest.createTwoEntry_canFindAllEntriesSaved.executor": "Run",
-    "JUnit.EntryRepositoryTest.executor": "Run",
-    "JUnit.EntryRepositoryTest.saveOneEntry_returnEntryWithIdNo.executor": "Run",
-    "JUnit.EntryRepositoryTest.saveOneEntry_updateEntry_countStillZero.executor": "Run",
-    "JUnit.EntryRepositoryTest.testCreateEntry_countIsOne.executor": "Run",
-    "JUnit.EntryRepositoryTest.testCreateTwoEntry_countIsTwo.executor": "Run",
-    "JUnit.EntryRepositoryTest.testCreateTwoEntry_deleteOneWithId_countIsOne.executor": "Run",
-    "JUnit.EntryRepositoryTest.testCreateTwoEntry_deleteOne_countIsOne.executor": "Run",
-    "JUnit.EntryRepositoryTest.testCreateTwoEntry_deleteTwo_countIsZero.executor": "Run",
-    "JUnit.EntryRepositoryTest.testSaveOneDiary_canFindDiaryByUsername.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/DELL/IdeaProjects/Diary/src/Main.java",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.DiaryRepositoryTest.diaryIsUnlockedDefault.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.diaryisLocked_canUnlockWithPassword.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.diaryisUnlocked_diaryCanBeLocked.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.saveTwoDiary_canFindAllDiariesSaved.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.testSaveDiary_countIsOne.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.testSaveOneDiary_canFindDiaryByUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.testSaveOneDiary_cantDeleteDiaryThatNotSaved.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.testSaveOneDiary_cantDeleteDiaryWithWrongUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.testSaveOneDiary_cantFindDiaryByWrongUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.testSaveOneDiary_cantSaveAnotherDiaryWithSameUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.testSaveTwoDiary_countIsTwo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.testSaveTwoDiary_deleteOneWithUsername_countIsOne.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.testSaveTwoDiary_deleteOne_countIsOne.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryRepositoryTest.testSaveTwoDiary_deleteTwo_countIsZero.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.registerOneUser_UserCanLoginWithAnyCase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.registerOneUser_UserCanLoginWithAnyCaseSensitive.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.registerOneUser_UserCanLoginWithAnyCaseSensitivity.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.registerOneUser_UserTriesToRegisterAgain_ThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.registerOneUser_countIsOne.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.registerOneUser_userCanLogin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.registerOneUser_userCanLoginWithValidCredentials.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.registerOneUser_userCantLoginWithIncorrectCaseSensitivePassword.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.registerOneUser_userCantLoginWithWrongPassword.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.registerOneUser_userDiaryIsUnlocked.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.registerOneUser_userLoginIn_userCanLogout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceImplementTest.userCantLoginIfNotRegistered_throwDiaryNotFoundException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServiceTest.testUserRegister_countIsOne.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServicesImplementTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServicesImplementTest.registerOneUser_canDeleteUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServicesImplementTest.registerOneUser_canDeleteUserWithCorrectDetails.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServicesImplementTest.registerOneUser_countIsOne.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServicesImplementTest.registerOneUser_diaryCantUnlockWithWrongUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServicesImplementTest.registerOneUser_userCanCreateEntry.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServicesImplementTest.registerOneUser_userCanCreateEntry_userCanUpdateEntry.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DiaryServicesImplementTest.registerOneUser_userLoginIn_userCanLogout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EntryRepositoryTest.createTwoEntry_canFindAllEntriesSaved.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EntryRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EntryRepositoryTest.saveOneEntry_returnEntryWithIdNo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EntryRepositoryTest.saveOneEntry_updateEntry_countStillZero.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EntryRepositoryTest.testCreateEntry_countIsOne.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EntryRepositoryTest.testCreateTwoEntry_countIsTwo.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EntryRepositoryTest.testCreateTwoEntry_deleteOneWithId_countIsOne.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EntryRepositoryTest.testCreateTwoEntry_deleteOne_countIsOne.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EntryRepositoryTest.testCreateTwoEntry_deleteTwo_countIsZero.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EntryRepositoryTest.testSaveOneDiary_canFindDiaryByUsername.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/DELL/IdeaProjects/Diary/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DiaryServicesImplementTest">
+  <component name="RunManager" selected="JUnit.EntryRepositoryTest">
     <configuration name="DiaryRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diary" />
       <extension name="coverage">
@@ -164,7 +175,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServicesImplementTest.registerOneUser_diaryCantUnlockWithWrongUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServicesImplementTest.registerOneUser_countIsOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diary" />
       <extension name="coverage">
         <pattern>
@@ -174,7 +185,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="services" />
       <option name="MAIN_CLASS_NAME" value="services.DiaryServicesImplementTest" />
-      <option name="METHOD_NAME" value="registerOneUser_diaryCantUnlockWithWrongUsername" />
+      <option name="METHOD_NAME" value="registerOneUser_countIsOne" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -213,11 +224,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EntryRepositoryTest" />
+        <item itemvalue="JUnit.DiaryRepositoryTest" />
+        <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_countIsOne" />
         <item itemvalue="JUnit.DiaryServicesImplementTest" />
         <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_userCanCreateEntry" />
-        <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_diaryCantUnlockWithWrongUsername" />
-        <item itemvalue="JUnit.DiaryRepositoryTest" />
-        <item itemvalue="JUnit.EntryRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -238,7 +249,8 @@
       <workItem from="1710444876051" duration="13906000" />
       <workItem from="1710561339686" duration="356000" />
       <workItem from="1710561924853" duration="8483000" />
-      <workItem from="1710762820642" duration="15284000" />
+      <workItem from="1710762820642" duration="23550000" />
+      <workItem from="1710906820705" duration="901000" />
     </task>
     <task id="LOCAL-00001" summary="Diary app with repository">
       <option name="closed" value="true" />
@@ -312,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710797863177</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added entry services">
+      <option name="closed" value="true" />
+      <created>1710800478106</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710800478106</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

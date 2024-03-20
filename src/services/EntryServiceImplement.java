@@ -3,6 +3,7 @@ package services;
 import data.model.Entry;
 import data.repository.EntryRepository;
 import data.repository.EntryRepositoryImplement;
+import exceptions.EntryNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +19,19 @@ public class EntryServiceImplement implements EntryServices{
     @Override
     public List<Entry> findEntriesByUsername(String username) {
         return entryRepository.findByAuthor(username);
-
-//         List<Entry> entries = new ArrayList<>();
-//        for (Entry entry : entryRepository.findAll()) {
-//            if(entry.getAuthor().equals(username)) entries.add(entry);
-//        }
-//        return entries;
     }
+
+    @Override
+    public void deleteEntrybyId(int id) {
+        entryRepository.delete(id);
+    }
+
+    @Override
+    public Entry getEntrybyId(int id) {
+        Entry entry = entryRepository.findById(id);
+        if(entry == null) throw new EntryNotFoundException("Entry not found");
+
+        return entry;
+    }
+
 }
