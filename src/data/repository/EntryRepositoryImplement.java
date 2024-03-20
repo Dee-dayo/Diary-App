@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EntryRepositoryImplement implements EntryRepository{
-    private List<Entry> entries = new ArrayList<>();
+    private static List<Entry> entries = new ArrayList<>();
     private int countEntry;
     @Override
     public Entry save(Entry entry) {
@@ -80,5 +80,10 @@ public class EntryRepositoryImplement implements EntryRepository{
 //            }
 //        }
         entries.remove(entry);
+    }
+
+    @Override
+    public void deleteAll() {
+        entries.clear();
     }
 }

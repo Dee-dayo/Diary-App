@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48cbc7b1-eb4b-43f8-9fe5-26421ee0e9c6" name="Changes" comment="added entry services">
-      <change afterPath="$PROJECT_DIR$/src/controllers/DiaryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/DiaryAppException.java" afterDir="false" />
+    <list default="true" id="48cbc7b1-eb4b-43f8-9fe5-26421ee0e9c6" name="Changes" comment="added diary controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dtos/requests/EntryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dtos/requests/EntryRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/DiaryLockedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/DiaryLockedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/DiaryNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/DiaryNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/EntryNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/EntryNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/UsernameAlreadyExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/UsernameAlreadyExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/DiaryServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryServiceImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/DiaryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DiaryServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/EntryServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/EntryServiceImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/EntryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/EntryServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repository/EntryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/EntryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/services/DiaryServicesImplementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/services/DiaryServicesImplementTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,6 +151,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DiaryServicesImplementTest.registerOneUser_countIsOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diary" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.DiaryServicesImplementTest" />
+      <option name="METHOD_NAME" value="registerOneUser_countIsOne" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DiaryServicesImplementTest.registerOneUser_userCanCreateEntry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diary" />
       <extension name="coverage">
@@ -208,28 +215,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EntryRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Diary" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dataRepository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dataRepository" />
-      <option name="MAIN_CLASS_NAME" value="dataRepository.EntryRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DiaryServicesImplementTest" />
-        <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_userCanCreateEntry" />
         <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_userCanCreateEntry_userCanUpdateEntry" />
+        <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_countIsOne" />
+        <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_userCanCreateEntry" />
         <item itemvalue="JUnit.DiaryServicesImplementTest.registerOneUser_userCanCreateEntry_userCanDeleteEntry" />
-        <item itemvalue="JUnit.EntryRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +243,7 @@
       <workItem from="1710561339686" duration="356000" />
       <workItem from="1710561924853" duration="8483000" />
       <workItem from="1710762820642" duration="23550000" />
-      <workItem from="1710906820705" duration="4319000" />
+      <workItem from="1710906820705" duration="5233000" />
     </task>
     <task id="LOCAL-00001" summary="Diary app with repository">
       <option name="closed" value="true" />
@@ -341,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710907984153</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added diary controller">
+      <option name="closed" value="true" />
+      <created>1710911415908</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1710911415908</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,7 +352,8 @@
     <MESSAGE value="wrote more tests" />
     <MESSAGE value="added diary services" />
     <MESSAGE value="added entry services" />
-    <option name="LAST_COMMIT_MESSAGE" value="added entry services" />
+    <MESSAGE value="added diary controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="added diary controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,14 +1,32 @@
 package services;
 
+import data.repository.EntryRepository;
+import data.repository.EntryRepositoryImplement;
 import dtos.requests.*;
 import exceptions.UsernameAlreadyExistException;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DiaryServicesImplementTest {
-    private DiaryServices diaryServices = new DiaryServiceImplement();
-    private EntryServices entryServices = new EntryServiceImplement();
+    private DiaryServices diaryServices;
+    private EntryServices entryServices;
+    private EntryRepository repository = new EntryRepositoryImplement();
+
+    @Before
+    public void setup(){
+        diaryServices = new DiaryServiceImplement();
+        entryServices = new EntryServiceImplement();
+
+    }
+
+    @After
+    public void tearDown(){
+        repository.deleteAll();
+    }
 
 
     @Test
