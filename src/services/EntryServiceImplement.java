@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EntryServiceImplement implements EntryServices{
-    private static EntryRepository entryRepository = new EntryRepositoryImplement();
+    private static final EntryRepository entryRepository = new EntryRepositoryImplement();
 
     @Override
     public void addEntry(Entry entry) {

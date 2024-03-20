@@ -4,6 +4,15 @@ public class EntryRequest {
     private String title;
     private String body;
     private String author;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

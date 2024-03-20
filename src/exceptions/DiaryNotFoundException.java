@@ -1,6 +1,6 @@
 package exceptions;
 
-public class DiaryNotFoundException extends RuntimeException{
+public class DiaryNotFoundException extends DiaryAppException{
     public DiaryNotFoundException(String message) {
         super(message);
     }

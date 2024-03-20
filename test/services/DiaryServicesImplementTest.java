@@ -1,23 +1,14 @@
 package services;
 
-import data.model.Entry;
 import dtos.requests.*;
 import exceptions.UsernameAlreadyExistException;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DiaryServicesImplementTest {
-    private DiaryServices diaryServices;
+    private DiaryServices diaryServices = new DiaryServiceImplement();
     private EntryServices entryServices = new EntryServiceImplement();
-
-    @BeforeEach
-    public void setUp(){
-        diaryServices = new DiaryServiceImplement();
-    }
 
 
     @Test
@@ -135,6 +126,7 @@ public class DiaryServicesImplementTest {
 
         DeleteEntryRequest deleteEntryRequest = new DeleteEntryRequest();
         deleteEntryRequest.setEntryId(1);
+        deleteEntryRequest.setUsername("username");
         diaryServices.deleteEntry(deleteEntryRequest);
         assertEquals(0, entryServices.findEntriesByUsername("USERname").size());
     }
@@ -158,15 +150,17 @@ public class DiaryServicesImplementTest {
         entryRequest.setAuthor("Username");
         diaryServices.createEntry(entryRequest);
         assertEquals(1, entryServices.findEntriesByUsername("USERname").size());
+        assertEquals("Title", entryServices.findEntriesByUsername("Username").getFirst().getTitle());
+        assertEquals(1, entryServices.findEntriesByUsername("Username").getFirst().getId());
 
-        List<Entry> foundEntries = diaryServices.getEntries("username");
-        assertEquals(1, foundEntries.size());
 
         EntryRequest entryRequest2 = new EntryRequest();
         entryRequest2.setTitle("New Title");
         entryRequest2.setBody("New Body");
         entryRequest2.setAuthor("Username");
+        entryRequest2.setId(1);
         diaryServices.updateEntry(entryRequest2);
+        assertEquals("New Title", entryServices.findEntriesByUsername("Username").getFirst().getTitle());
         assertEquals(1, entryServices.findEntriesByUsername("USERname").size());
     }
 }

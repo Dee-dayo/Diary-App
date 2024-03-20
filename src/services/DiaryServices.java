@@ -14,9 +14,6 @@ public interface DiaryServices {
     void logout(LogoutRequest logoutRequest);
     void createEntry(EntryRequest entryRequest);
     void deleteDiary(DeleteUserRequest deleteUserRequest);
-    List<Entry> getEntries(String username);
-
     void updateEntry(EntryRequest entryRequest2);
-
     void deleteEntry(DeleteEntryRequest deleteEntryRequest);
 }

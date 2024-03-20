@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DiaryServiceImplement implements DiaryServices {
     private final DiaryRepository diaryRepository = new DiaryRepositoryImplement();
-    private final EntryServices entryServices = new EntryServiceImplement();
+    private static final EntryServices entryServices = new EntryServiceImplement();
 
     @Override
     public void register(RegisterRequest registerRequest) {
@@ -74,7 +74,7 @@ public class DiaryServiceImplement implements DiaryServices {
         entryServices.addEntry(entry);
     }
 
-    private void isLockStatus(Diary diary) {
+    private static void isLockStatus(Diary diary) {
         if(diary.isLocked()) throw new DiaryLockedException("You need to login to create Entry");
     }
 
@@ -89,11 +89,6 @@ public class DiaryServiceImplement implements DiaryServices {
     }
 
     @Override
-    public List<Entry> getEntries(String username) {
-        return entryServices.findEntriesByUsername(username);
-    }
-
-    @Override
     public void updateEntry(EntryRequest entryRequest) {
         Diary diary = findDiaryByUsername(entryRequest.getAuthor());
         isLockStatus(diary);
@@ -102,6 +97,7 @@ public class DiaryServiceImplement implements DiaryServices {
         entry.setBody(entryRequest.getBody());
         entry.setTitle(entryRequest.getTitle());
         entry.setAuthor(entryRequest.getAuthor());
+        entry.setId(entryRequest.getId());
         entryServices.addEntry(entry);
     }
 
